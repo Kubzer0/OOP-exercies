@@ -1,10 +1,10 @@
-function Dog(){
-    this.sound ='Woof'
+const Person =function(name) {
+    this.name = name
 }
-Dog.prototype.makeSound= function(){
-    console.log(this.sound)
+Person.prototype.sayHello = function(){
+    console.log(`hi i'm ${this.name}`)
 }
-const dog0 = Dog()
-const dog1 = new Dog()
 
-dog1.makeSound()
+const me = new Person('kuba')
+
+me.sayHello()
