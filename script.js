@@ -1,7 +1,7 @@
 
 const growJSskill = function(){
     this.JSskill=this.JSskill +1
-}
+};
 
 const makePerson = function(name,initialSkill){
     return ({
@@ -9,8 +9,13 @@ const makePerson = function(name,initialSkill){
         JSskill: initialSkill,
         growJSskill: growJSskill,
     })
+};
+
+
+
+const brothers=[];
+for(let i=0;i<100;i++){
+    brothers[i]= makePerson(i,0)
 }
 
-const me = makePerson('kuba', 0)
-me.growJSskill()
 
