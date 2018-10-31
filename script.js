@@ -1,15 +1,10 @@
-const makeSound = function(name, lastname){
-    console.log(this.sound +' ' + name + ' ' +lastname)
+function Dog(){
+    this.sound ='Woof'
 }
-
-const cat = {
-    name: 'fluffy',
-    sound: 'meow',
-    makeSound: makeSound,
+Dog.prototype.makeSound= function(){
+    console.log(this.sound)
 }
+const dog0 = Dog()
+const dog1 = new Dog()
 
-makeSound('jakub','gryka')
-
-const bindedToCatMakeSound= makeSound.bind(cat)
-
-bindedToCatMakeSound('jakub', 'gryka')
+dog1.makeSound()
