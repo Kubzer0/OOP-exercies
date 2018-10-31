@@ -8,10 +8,8 @@ const cat = {
     makeSound: makeSound,
 }
 
-cat.makeSound('jakub', 'gryka')
+makeSound('jakub','gryka')
 
-makeSound.apply(cat, ['jakub', 'gryka'])
-makeSound.call(cat, 'jakub', 'gryka')
+const bindedToCatMakeSound= makeSound.bind(cat)
 
-makeSound.apply({sound:'woof'}, ['jakub', 'gryka'])
-makeSound.call({sound: 'woof'},'jakub', 'gryka')
+bindedToCatMakeSound('jakub', 'gryka')
