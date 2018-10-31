@@ -1,18 +1,17 @@
+const makeSound = function(name, lastname){
+    console.log(this.sound +' ' + name + ' ' +lastname)
+}
 
-const growJSskill = function(){
-    this.JSskill=this.JSskill +1
-};
+const cat = {
+    name: 'fluffy',
+    sound: 'meow',
+    makeSound: makeSound,
+}
 
-const makePerson = function(name,initialSkill){
-    return ({
-        name: name,
-        JSskill: initialSkill,
-        growJSskill: growJSskill,
-    })
-};
+cat.makeSound('jakub', 'gryka')
 
+makeSound.apply(cat, ['jakub', 'gryka'])
+makeSound.call(cat, 'jakub', 'gryka')
 
-
-const brothers= Array(100).fill(0).map((e,i) => makePerson(i,0));
-
-
+makeSound.apply({sound:'woof'}, ['jakub', 'gryka'])
+makeSound.call({sound: 'woof'},'jakub', 'gryka')
